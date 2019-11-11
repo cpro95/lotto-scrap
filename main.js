@@ -17,12 +17,11 @@ const getHtml = async () => {
   }
 };
 
-// 회차 및 날짜
 getHtml()
   .then(html => {
     const $ = cheerio.load(html.data);
 
-    var noList = [];
+    // var noList = [];
     var lotto_result = {};
 
     // 회차 (round)
