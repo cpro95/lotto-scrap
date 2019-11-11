@@ -49,10 +49,10 @@ inquirer.prompt(questions).then(answers => {
           var lotto_result = {};
 
           // 회차 (round)
-          lotto_result.round = $('div.win_result')
+          lotto_result.round = Number($('div.win_result')
             .find('h4,strong')
             .text()
-            .match(/\d+/)[0];
+            .match(/\d+/)[0]);
 
           // 날짜 (date)
           var dateData = $('div.win_result')
@@ -80,13 +80,13 @@ inquirer.prompt(questions).then(answers => {
               );
             });
 
-          lotto_result.no1 = numberArr[0];
-          lotto_result.no2 = numberArr[1];
-          lotto_result.no3 = numberArr[2];
-          lotto_result.no4 = numberArr[3];
-          lotto_result.no5 = numberArr[4];
-          lotto_result.no6 = numberArr[5];
-          lotto_result.bonus = numberArr[6];
+          lotto_result.no1 = Number(numberArr[0]);
+          lotto_result.no2 = Number(numberArr[1]);
+          lotto_result.no3 = Number(numberArr[2]);
+          lotto_result.no4 = Number(numberArr[3]);
+          lotto_result.no5 = Number(numberArr[4]);
+          lotto_result.no6 = Number(numberArr[5]);
+          lotto_result.bonus = Number(numberArr[6]);
 
           // 각 등수 당첨 인원
           var winnerArr = [];
@@ -104,11 +104,11 @@ inquirer.prompt(questions).then(answers => {
               );
             });
 
-          lotto_result.winner1 = winnerArr[0];
-          lotto_result.winner2 = winnerArr[1];
-          lotto_result.winner3 = winnerArr[2];
-          lotto_result.winner4 = winnerArr[3];
-          lotto_result.winner5 = winnerArr[4];
+          lotto_result.winner1 = Number(winnerArr[0]);
+          lotto_result.winner2 = Number(winnerArr[1]);
+          lotto_result.winner3 = Number(winnerArr[2]);
+          lotto_result.winner4 = Number(winnerArr[3]);
+          lotto_result.winner5 = Number(winnerArr[4]);
 
           // 각 등수별 1인당 당첨금
           var amountArr = [];
@@ -127,11 +127,11 @@ inquirer.prompt(questions).then(answers => {
               );
             });
 
-          lotto_result.amount1 = amountArr[0];
-          lotto_result.amount2 = amountArr[1];
-          lotto_result.amount3 = amountArr[2];
-          lotto_result.amount4 = amountArr[3];
-          lotto_result.amount5 = amountArr[4];
+          lotto_result.amount1 = Number(amountArr[0]);
+          lotto_result.amount2 = Number(amountArr[1]);
+          lotto_result.amount3 = Number(amountArr[2]);
+          lotto_result.amount4 = Number(amountArr[3]);
+          lotto_result.amount5 = Number(amountArr[4]);
 
           return lotto_result;
         }
